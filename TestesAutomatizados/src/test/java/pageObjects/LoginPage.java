@@ -10,6 +10,8 @@ import static utils.Utils.*;
 public class LoginPage {
 
     //Mapeando elementos
+
+    // Por nome
     @FindBy(name = "txtUsername")
     private WebElement campoUsuario;
 
@@ -18,6 +20,23 @@ public class LoginPage {
 
     @FindBy(name = "Submit")
     private WebElement botaoLogin;
+
+
+    // Por ip
+    @FindBy(id = "txtUsername")
+    private WebElement campoUsuario1;
+
+    // Por link
+    @FindBy(linkText = "Forgot your password?")
+    private WebElement link;
+
+    // Por css
+    @FindBy(css = "[id=txtUserName]")
+    private WebElement link1;
+
+    // Por xpath
+    @FindBy(xpath = "//span[text()='( Username : Admin | Password : admin123 )']")
+    private WebElement link2;
 
 
     public void informarCampoUsuario(String usuario) {
