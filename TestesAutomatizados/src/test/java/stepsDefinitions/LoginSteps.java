@@ -11,21 +11,19 @@ import static utils.Utils.*;
 
 public class LoginSteps {
 
-    LoginPage loginPage = new LoginPage();
-
     @Quando("eu informar o usuario {string}")
     public void euInformarOUsuario(String usuario) {
-        loginPage.informarCampoUsuario(usuario);
+       Na(LoginPage.class).informarCampoUsuario(usuario);
     }
 
     @Quando("informar a senha {string}")
     public void informarASenha(String senha) {
-        loginPage.informarCampoSenha(senha);
+        Na(LoginPage.class).informarCampoSenha(senha);
     }
 
     @Quando("clicar no botao login")
     public void clicarNoBotaoLogin() {
-        loginPage.acionarBotaoLogin();
+        Na(LoginPage.class).acionarBotaoLogin();
 
     }
 
@@ -37,6 +35,6 @@ public class LoginSteps {
     @Entao("o sistema exibe o usuario logado")
     public void oSistemaExibeOUsuarioLogado() {
         // a variavel welcome é dinamica, logo esse teste vai falhar
-        assertEquals("Welcome i59W60", driver.findElement(By.id("welcome")).getText());
+        assertEquals("Welcome Rio", driver.findElement(By.id("welcome")).getText());
     }
 }
