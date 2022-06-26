@@ -2,21 +2,26 @@ package stepsDefinitions;
 
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
+import pageObjects.LoginPage;
 
 import static utils.Utils.*;
 
 public class Hooks {
 
-    @Before ()
+    @Before (value = "@Login")
+    public void funcionalidadeLogin() {
+        accessarSistema();
+    }
+
+    @Before
     public void setUp() {
         accessarSistema();
-
+        Na(LoginPage.class).realizarLogin("Admin","admin123");
     }
 
     @After ()
     public void tearDown() {
         driver.quit();
-
     }
 
 //    @Before(order = 2, value = "@login") // só será executado se houver a tag @login
