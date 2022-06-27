@@ -35,6 +35,6 @@ public class LoginSteps {
     @Entao("o sistema exibe o usuario logado")
     public void oSistemaExibeOUsuarioLogado() {
         // a variavel welcome é dinamica, logo esse teste vai falhar
-        assertEquals("Welcome Rio", driver.findElement(By.id("welcome")).getText());
+        assertEquals("Welcome Paul", driver.findElement(By.id("welcome")).getText());
     }
 }

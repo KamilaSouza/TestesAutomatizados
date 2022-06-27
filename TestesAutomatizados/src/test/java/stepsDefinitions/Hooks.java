@@ -1,5 +1,6 @@
 package stepsDefinitions;
 
+import io.cucumber.core.api.Scenario;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import pageObjects.LoginPage;
@@ -13,15 +14,16 @@ public class Hooks {
         accessarSistema();
     }
 
-    @Before
+    @Before (value = "not @Login")
     public void setUp() {
         accessarSistema();
         Na(LoginPage.class).realizarLogin("Admin","admin123");
     }
 
     @After ()
-    public void tearDown() {
-        //driver.quit();
+    public void tearDown(Scenario scenario) {
+        capturarTela(scenario);
+        driver.quit();
     }
 
 //    @Before(order = 2, value = "@login") // só será executado se houver a tag @login
