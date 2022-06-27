@@ -21,7 +21,7 @@ public class Hooks {
 
     @After ()
     public void tearDown() {
-        driver.quit();
+        //driver.quit();
     }
 
 //    @Before(order = 2, value = "@login") // só será executado se houver a tag @login

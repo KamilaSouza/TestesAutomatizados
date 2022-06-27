@@ -9,7 +9,7 @@ import org.junit.runner.RunWith;
         plugin = {"pretty"},
         features = "src/test/resources/features",
         glue = "stepsDefinitions",
-        tags = "@CadastrarUsuario",
+        tags = "@dropDown",
         snippets = CucumberOptions.SnippetType.CAMELCASE, //gera metodos com camelcase
         monochrome = true, // letra branca em run
         dryRun = false // true apenas para gerar os steps

@@ -54,7 +54,6 @@ public class CadastrarUsuarioSteps {
         assertTrue(driver.findElement(By.xpath("//a[text()='" + userName + "']")).isDisplayed());
     }
 
-
 }
 
 
